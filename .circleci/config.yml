@@ -10,3 +10,10 @@ jobs:
       - checkout # checkout source code
       - python/install-packages:
           pkg-manager: pip
+      - run:
+          name: Run tests
+          command: python -m pytest
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
